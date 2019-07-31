@@ -1,3 +1,5 @@
+type PackageManager = 'npm' | 'yarn'
+
 type CommandAlias = string
 type CommandDescription = string
 type CommandScript = string
