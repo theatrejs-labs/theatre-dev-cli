@@ -1,12 +1,18 @@
 {
-	"name": "cli-app-template",
+	"name": "@theatre/dev-cli",
+	"description": "Theatre's Developers CLI Kit",
 	"version": "0.1.0",
 	"license": "MIT",
+	"preferGlobal": true,
 	"bin": {
-		"cli-app-template": "./lib/index.js"
+		"td": "./lib/index.js"
 	},
 	"engines": {
 		"node": ">=8"
+	},
+	"repository": {
+		"url": "https://github.com/theatrejs-labs/theatre-dev-cli.git",
+		"type": "git"
 	},
 	"scripts": {
 		"start": "node ./lib/index.js",

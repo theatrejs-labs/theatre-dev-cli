@@ -1,12 +1,16 @@
-import program from 'commander'
+#!/usr/bin/env node
+import program from './shared/program'
+
+import run from './commands/run';
 
 program
-  .version('0.1.0')
+  .command('t')
+  .description('Runs `npm test`')
+  .action(run('test'))
 
 program
-  .command('*')
-  .action((env) => {
-    console.log('deploying "%s"', env)
-  })
+  .command('b')
+  .description('Runs `npm build`')
+  .action(run('build'))
  
 program.parse(process.argv)
