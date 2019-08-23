@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import program from './shared/program'
+import { create } from './commands/scripts/sampler'
 
 import { registerScripts } from './commands/scripts';
 
@@ -21,7 +22,12 @@ registerScripts('yarn', [
   [`i`, `Installs dependencies`, `install`],
   [`i <package>`, `Installs a dependency`, `add <package>`],
   [`id <package>`, `Installs a devDependency`, `add -D <package>`],
-  [`ig <package>`, `Installs a global dependency`, `global add <package>`],
+  [`ig <package>`, `Installs a global dependency`, `global add <package>`]
 ])
+
+program
+  .command(`c <sample>`)
+  .description(`Creates a partial based on your existing sample directories`)
+  .action(create)
  
 program.parse(process.argv)

@@ -10,8 +10,7 @@ const getAction = (command: string, alias: string) => {
         variables.forEach((variable, i) => command = command.replace(variable, '#'+i))
     }
     return (...args: []) => {
-        args.forEach((value, i) => command = command.replace('#'+i, value))
-        console.log(command)
+        args.filter(value => typeof value === 'string').forEach((value, i) => command = command.replace('#'+i, value))
         console.log(chalk`{yellow Running} {grey ${command}}`)
         run(command)
     }
