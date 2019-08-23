@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import program from './shared/program'
 import { create } from './commands/scripts/sampler'
+import program from './shared/program'
 
 import { registerScripts } from './commands/scripts';
 
