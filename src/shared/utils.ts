@@ -1,10 +1,9 @@
-import { spawn } from 'child_process'
+import execa from 'execa'
 
 export const run = (command: string) => {
-    spawn(command, {
-        cwd: process.cwd(),
-        detached: true,
-        shell: true,
-        stdio: "inherit"
-    })
+    const exec = execa.command(command)
+    exec.catch(console.error)
+    if (exec.stdout) {
+        exec.stdout.pipe(process.stdout);
+    }
 }

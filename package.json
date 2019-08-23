@@ -46,6 +46,7 @@
 	},
 	"dependencies": {
 		"commander": "^2.20.0",
+		"execa": "^2.0.4",
 		"inquirer": "^6.5.0"
 	}
 }
